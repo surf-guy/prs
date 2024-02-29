@@ -1,8 +1,10 @@
-const computerSelection=getComputerChoice();
-console.log(computerSelection)
+let computerSelection=getComputerChoice();
+//console.log(computerSelection)
 
-const playerSelection=prompt("Enter player choice")
-console.log(playerSelection)
+let playerSelection=prompt("Enter player choice")
+//console.log(playerSelection)
+
+playGame()
 
 function getComputerChoice(){
     //random number between 0-2 to determine rock, paper, scissor
@@ -50,5 +52,14 @@ function playRound(playerSelection, computerSelection){
      
 }
 
+function playGame(){
+    for(let x=1; x<6; x++){
+        console.log("Round "+x+" "+playRound(playerSelection, computerSelection));
+        computerSelection=getComputerChoice();
+        playerSelection=prompt("Enter player choice")
+        if(x==5){
+            break
+        }
+    }
 
-console.log(playRound(playerSelection, computerSelection));
+}
